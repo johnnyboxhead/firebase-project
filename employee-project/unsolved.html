@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="header-title">Employee Index</h1>
+    </div>
+
+    
+    <div class="container">
+        
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><h1>Employee Index</h1></div>
+          
+            <!-- Table -->
+                <table class="table">
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Role</th> 
+                        <th>Start Date</th>
+                        <th>Months Worked</th> 
+                        <th>Monthly Rate</th>
+                        <th>Total Billed</th>
+                    </tr class="click-value">
+                    <tr>
+                    </tr>
+                </table>
+        </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading"><h1>Add Employee</h1></div>
+            <form class="form-group">
+                <p>Employee Name</p>
+                <input type="text" class="form-control employee-name" placeholder="Employee Name...">
+                <p>Role</p>
+                <input type="text" class="form-control role" placeholder="Role...">
+                <p>Start Date (MM:YY)</p>
+                <input type="text" class="form-control start-date" placeholder="Start Date (MM:YY)...">
+                <p>Monthly Rate (min)</p>
+                <input type="text" class="form-control monthly-rate" placeholder="Monthly Rate (min)...">
+            </form>
+            <button id="update-info" type="button" class="btn btn-primary btn-lg">SUBMIT</button>
+        </div>
+    </div>
+        </body>
+        <script type="text/javascript" src="assets/javascript/practice.js"></script>
+        </html>
