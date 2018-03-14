@@ -26,21 +26,21 @@ var config = {
       var role = $(".role").val().trim();
       var startDate = $(".start-date").val().trim();
       var monthlyRate = $(".monthly-rate").val().trim();
-      var tBody = $("tbody");
-      var tRow = $("<tr>");
+    //   var tBody = $("tbody");
+    //   var tRow = $("<tr>");
   
       // Methods run on jQuery selectors return the selector they we run on
       // This is why we can create and save a reference to a td in the same statement we update its text
-      var employeeNameCol = $("<td>").text(employeeName);
-      var roleCol = $("<td>").text(role);
-      var startDateCol = $("<td>").text(startDate);
-      var monthlyRateCol = $("<td>").text(monthlyRate);
+    //   var employeeNameCol = $("<td>").text(employeeName);
+    //   var roleCol = $("<td>").text(role);
+    //   var startDateCol = $("<td>").text(startDate);
+    //   var monthlyRateCol = $("<td>").text(monthlyRate);
   
       // Append the newly created table data to the table row
-      tRow.append(employeeNameCol, roleCol, startDateCol, monthlyRateCol);
+    //   tRow.append(employeeNameCol, roleCol, startDateCol, monthlyRateCol);
         
       // Append the table row to the table body
-      tBody.append(tRow);
+    //   tBody.append(tRow);
   
       database.ref().push({
         employeeName: employeeName,
@@ -49,11 +49,11 @@ var config = {
         monthlyRate: monthlyRate
   
       })
-      // logging variables
-      console.log(employeeName);
-      console.log(role);
-      console.log(startDate);
-      console.log(monthlyRate);
+    //   // logging variables
+    //   console.log(childSnapShot.val().employeeName);
+    //   console.log(childSnapShot.val().role);
+    //   console.log(childSnapShot.val().startDate);
+    //   console.log(childSnapShot.val().monthlyRate);
    
   
        // Alert
@@ -66,16 +66,20 @@ var config = {
     $(".monthly-rate").val("");
   });
   
-  database.ref().on("value", function(snapshot) {
+  database.ref().on("child_added", function(snapshot) {
   
     // Then we console.log the value of snapshot
     console.log(snapshot.val());
+
+    var a = snapshot.val();
+
+    $("#table-body").append(`<tr><td>${a.employeeName}</td><td>${a.role}</td><td>${a.startDate}</td><td>${a.monthlyRate}</td><td>${a.startDate}</td></tr>`);
   
     // Then we change the html associated with the number.
-    $(".click-value").text(snapshot.val().employeeName);
-    $(".click-value").text(snapshot.val().role);
-    $(".click-value").text(snapshot.val().startDate);
-    $(".click-value").text(snapshot.val().monthlyRate);
+    // $(".click-value").text(snapshot.val().employeeName);
+    // $(".click-value").text(snapshot.val().role);
+    // $(".click-value").text(snapshot.val().startDate);
+    // $(".click-value").text(snapshot.val().monthlyRate);
     
   
     // Then update the clickCounter variable with data from the database.
